@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" name="viewport" content="initial-scale=1">
+    <meta charset="UTF-8" name="viewport" content="initial-scale=1, user-scalable=no"  >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="travel, list, dreams">
-    <title>Create your dreams!</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <title>Create your dream travel list!</title>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
 <body>
+
+    <div class="container">
+
+        <header>
+            <h1>DREAM TRAVEL LIST</h1>
+        </header>
+        <main>
+            <section class="addNew">
+                <input type="text" placeholder="Where to go next?" id="item">
+                <button class="addBtn">
+                    <img src="images/plus.png">
+                </button>
+            </section>
+
+            <section class="travelList">
+                <ul id="toGo"></ul>
+                <ul id="completed">I've been places</ul>
+            </section>
+
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
 
 </body>
 </html>
