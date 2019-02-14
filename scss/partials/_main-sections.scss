@@ -1,16 +1,17 @@
-main{
+.main{
   display: flex;
   flex-direction: column;
   min-height: 80vh;
   .addNew{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     height: 10vh;
     padding: 5rem;
 
-    #item{
+    #place{
       text-align: center;
-      font-size: 22px;
+      font-size: 2.2rem;
       border: none;
       width: 55%;
       -webkit-box-shadow: 0 0 64px -3px rgba(67,108,145,0.43);
@@ -22,7 +23,7 @@ main{
       border:none;
       padding-left: 2rem;
 
-      img{
+     .plus-img{
         height: 5rem;
       }
     }
@@ -30,50 +31,57 @@ main{
   .travelList{
     text-align:center;
 
+    #toGo:empty:after{
+      content: 'It is time to create your dream destination!';
+      display: block;
+    }
+
+     #completed:not(:empty):before{
+       content: 'Look where you have been!';
+      }
+
+    .show {
+      display: block;
+    }
+    #completed:before, #toGo:after{
+      font-size: 2rem;
+      color: white;
+    }
+
     li {
       background-color: rgba(225,225,255,0.5);
-      border: 1px solid coral;
       width: 60%;
       height: 4.5rem;
-      font-size: 25px;
+      font-size: 2.5rem;
       margin: 1% 20%;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       .buttons{
-        .undone{
-          height: 3rem;
-          margin: 0 1rem;
-          width: 3rem;
-          background-image: url("../images/bin.png");
-          background-size: cover;
+        width: 45%;
+        height: 80%;
+        .undone, .done{
+          height: 100%;
+          width: 6rem;
           border: none;
-        }
-        .done{
-          height: 3rem;
           margin: 0 1rem;
-          width: 3rem;
-          background-size: cover;
-          border: none;
-          background-image: url("../images/checked.png");
+          background-color: white;
         }
       }
     }
-    .completed-header{
-      font-size: 22px;
-      color: white;
-      padding: 3rem 0;
-    }
+
   }
 
   #completed{
+    color: white;
+    padding: 3rem 0;
+    font-size: 2.2rem;
     li{
       background-color: rgba(225,225,255,0.5);
-      border: 1px solid coral;
       width: 60%;
       height: 4.5rem;
-      font-size: 25px;
+      font-size: 2.5rem;
       margin: 0 20%;
       list-style: none;
       display: flex;
@@ -83,6 +91,15 @@ main{
   }
 }
 
-.is-visible{
+.is-hidden{
   display: none;
+}
+
+.error{
+  color: rgba(135,3,32,0.98);
+  z-index: 999999999;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  text-align: center;
 }
