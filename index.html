@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" name="viewport" content="initial-scale=1, user-scalable=no"  >
+    <meta charset="UTF-8" name="viewport" content="initial-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="travel, list, dreams">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
@@ -11,28 +11,28 @@
 <body>
 
     <div class="container">
-
-        <header>
-            <h1>DREAM TRAVEL LIST</h1>
+        <header class="header">
+            <h1 class="header-text">DREAM TRAVEL LIST</h1>
         </header>
-        <main>
-            <section class="addNew">
-                <input type="text" placeholder="Where to go next?" id="item">
-                <button class="addBtn">
-                    <img src="images/plus.png">
-                </button>
+        <main class="main">
+            <section class="input-container">
+                <div class="addNew">
+                    <input type="text" placeholder="Where to go next?" id="place">
+                    <button class="addBtn">
+                        <img class="plus-img" src="images/plus.png">
+                    </button>
+                    <p class="error is-hidden">Please describe the place more specific</p>
+                </div>
+
             </section>
 
             <section class="travelList">
                 <ul id="toGo"></ul>
-                <ul id="completed">I've been places</ul>
+                <ul id="completed"></ul>
             </section>
-
-
         </main>
 
     </div>
-
     <script src="js/app.js"></script>
 
 </body>
