@@ -1,3 +1,5 @@
+@import "container";
+
 .main{
   display: flex;
   flex-direction: column;
@@ -7,16 +9,18 @@
     justify-content: center;
     flex-wrap: wrap;
     height: 10vh;
-    padding: 5rem;
-
+    padding: 5rem 4rem;
     #place{
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       border: none;
-      width: 55%;
+      width: 45rem;
       -webkit-box-shadow: 0 0 64px -3px rgba(67,108,145,0.43);
       -moz-box-shadow: 0 0 64px -3px rgba(67,108,145,0.43);
       box-shadow: 0 0 64px -3px rgba(67,108,145,0.43);
+      @media only screen and (max-width: 400px){
+        width: 33rem;
+      }
     }
     .addBtn{
       background: none;
@@ -25,27 +29,36 @@
 
      .plus-img{
         height: 5rem;
+       @media only screen and (max-width: $bp-mobile){
+         height: 7rem;
+       }
       }
     }
   }
   .travelList{
     text-align:center;
+    color: white;
 
-    #toGo:empty:after{
-      content: 'It is time to create your dream destination!';
+    #toGo:empty:after, #completed:not(:empty):before{
+      padding: 5rem 1rem;
+      font-size: 2.5rem;
       display: block;
     }
-
+    #toGo:empty:after{
+      content: 'It is time to create your dream destination!';
+    }
      #completed:not(:empty):before{
        content: 'Look where you have been!';
-      }
+     }
 
     .show {
       display: block;
     }
-    #completed:before, #toGo:after{
-      font-size: 2rem;
-      color: white;
+
+    #completed {
+      .done {
+        display: none;
+      }
     }
 
     li {
@@ -53,40 +66,33 @@
       width: 60%;
       height: 4.5rem;
       font-size: 2.5rem;
-      margin: 1% 20%;
+      margin:1% auto;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-left: 1%;
       .buttons{
-        width: 45%;
         height: 80%;
+        font-size: 1rem;
         .undone, .done{
           height: 100%;
-          width: 6rem;
+          font-size: 1.5rem;
+          width: 8rem;
           border: none;
           margin: 0 1rem;
           background-color: white;
+          cursor: pointer;
+          color: rgba(135,3,32,0.98);
+          transition: background-color .4s ease-in-out;
+          &:hover {
+            background-color: rgba(161, 126, 27, 0.5) ;
+          }
+          @media only screen and (max-width: $bp-mobile){
+            width: 6.5rem;
+          }
         }
       }
-    }
-
-  }
-
-  #completed{
-    color: white;
-    padding: 3rem 0;
-    font-size: 2.2rem;
-    li{
-      background-color: rgba(225,225,255,0.5);
-      width: 60%;
-      height: 4.5rem;
-      font-size: 2.5rem;
-      margin: 0 20%;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
   }
 }
@@ -97,7 +103,6 @@
 
 .error{
   color: rgba(135,3,32,0.98);
-  z-index: 999999999;
   width: 100%;
   padding: 1rem 0;
   font-size: 1.5rem;

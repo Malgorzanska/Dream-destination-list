@@ -1,6 +1,42 @@
+$max-width: 2000px;
+$min-width: 300px;
+
+
+$bp-mobile-narrow : 479px;
+$bp-mobile : 519px ;
+$bp-phablet : 767px ;
+$bp-portrait : 1023px;
+$bp-tablet  : 1199px ;
+$bp-desktop   : 1359px ;
+$bp-desktop-wide  :1600px;
+
+html {
+  font-size: 10px;
+
+  @media only screen and (min-width: $bp-desktop-wide){
+    font-size: 15px;
+  }
+
+  @media only screen and (max-width: $bp-portrait){
+    font-size: 9px;
+  }
+
+  @media only screen and (max-width: $bp-phablet){
+    font-size: 8px;
+  }
+  @media only screen and (max-width: $bp-mobile){
+    font-size: 7px;
+  }
+  @media only screen and (max-width: $bp-mobile-narrow){
+    font-size: 6px;
+  }
+}
 .container {
+  margin:0 auto;
   height: 100%;
   width: 100%;
+  max-width: $max-width;
+  min-width: $min-width;
   background-image: url("../images/background.jpg");
   background-size: cover;
   background-attachment: fixed;
