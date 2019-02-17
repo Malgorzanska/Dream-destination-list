@@ -78,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function(){
     input.addEventListener('keydown', function (e) {
         let value = this.value;
 		
+		moreError.classList.add('is-hidden');
+		lessError.classList.add('is-hidden');
+	   
 		if (e.code === "Enter" || event.code === "NumpadEnter")
 		{
 				addItem(value);
