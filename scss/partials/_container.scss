@@ -16,11 +16,12 @@ html {
   @media only screen and (min-width: $bp-desktop-wide){
     font-size: 15px;
   }
-
+  @media only screen and (min-width: $bp-desktop){
+    font-size: 12px;
+  }
   @media only screen and (max-width: $bp-portrait){
     font-size: 9px;
   }
-
   @media only screen and (max-width: $bp-phablet){
     font-size: 8px;
   }

@@ -3,13 +3,13 @@
 .main{
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
+  min-height: 75vh;
   .addNew{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     height: 10vh;
-    padding: 5rem 4rem;
+    padding-bottom: 10vh;
     #place{
       text-align: center;
       font-size: 2.5rem;
@@ -40,15 +40,16 @@
     color: white;
 
     #toGo:empty:after, #completed:not(:empty):before{
-      padding: 5rem 1rem;
       font-size: 2.5rem;
       display: block;
+      padding: 0 1rem;
     }
     #toGo:empty:after{
       content: 'It is time to create your dream destination!';
     }
      #completed:not(:empty):before{
        content: 'Look where you have been!';
+       margin: 6rem 0;
      }
 
     .show {
@@ -63,15 +64,18 @@
 
     li {
       background-color: rgba(225,225,255,0.5);
-      width: 60%;
+      width: 55%;
       height: 4.5rem;
       font-size: 2.5rem;
-      margin:1% auto;
+      margin:0 auto 1%;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-left: 1%;
+      @media only screen and (max-width: $bp-phablet){
+        width: 80%;
+      }
       .buttons{
         height: 80%;
         font-size: 1rem;

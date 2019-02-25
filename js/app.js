@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function(){
        lessError.classList.add('is-hidden');
 
        addItem(newPlace);
-    });
 
 	
     function removeItem(){
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function(){
         } else {
            var proper = document.querySelector("#toGo")
         }
-
         parent.removeChild(li);
         proper.appendChild(li);
     }
@@ -51,6 +49,16 @@ document.addEventListener("DOMContentLoaded", function(){
 		input.value  = "";
 		
 		let newList = document.querySelector("#toGo");
+
+        if (newPlace.length < 3 ){
+            moreError.classList.remove('is-hidden');
+            return;
+        } else if (newPlace.length > 12){
+            lessError.classList.remove('is-hidden');
+            return;
+        }
+
+        input.value  = "";
 
         let newItem = document.createElement('li');
         newItem.innerText = newPlace;
@@ -77,13 +85,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
     input.addEventListener('keydown', function (e) {
         let value = this.value;
-		
-		moreError.classList.add('is-hidden');
-		lessError.classList.add('is-hidden');
-	   
-		if (e.code === "Enter" || event.code === "NumpadEnter")
-		{
-				addItem(value);
-		}
-	});
+
+
+        moreError.classList.add('is-hidden');
+        lessError.classList.add('is-hidden');
+
+        if (e.code === "Enter" || event.code === "NumpadEnter"){
+            addItem(value);
+        }
+    });
 });
