@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function(){
        moreError.classList.add('is-hidden');
        lessError.classList.add('is-hidden');
 
-        addItem(newPlace);
-    });
+       addItem(newPlace);
 
+	
     function removeItem(){
         let li = this.parentElement.parentElement;
         let parent = li.parentElement;
@@ -35,7 +35,20 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function addItem(newPlace) {
-        let newList = document.querySelector("#toGo");
+		
+		if (newPlace.length < 3) { 
+		moreError.classList.remove('is-hidden'); 
+		return;
+		}
+		
+		if (newPlace.length > 12) { 
+		lessError.classList.remove('is-hidden'); 
+		return;
+		}
+		
+		input.value  = "";
+		
+		let newList = document.querySelector("#toGo");
 
         if (newPlace.length < 3 ){
             moreError.classList.remove('is-hidden');
@@ -72,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     input.addEventListener('keydown', function (e) {
         let value = this.value;
+
 
         moreError.classList.add('is-hidden');
         lessError.classList.add('is-hidden');
