@@ -10,4 +10,4 @@ Simple app created to organise your travel plans and dreams.
 - GULP
 
 To see the results click here:
-https://malgorzanska.github.io/Dream-Destination-List/
+https://malgorzanska.github.io/Dream-destination-list/
